@@ -1,0 +1,32 @@
+body {
+  font-size: 0.9rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.0rem;
+}
+
+.content {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, minmax(100px, auto));
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+.column-center {
+  grid-column: 2;
+}
+
+.roman-numeral {
+  font-size: 1.0rem;
+}
+
+.user-input {
+  width: 50px;
+}
