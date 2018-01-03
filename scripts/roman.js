@@ -8,7 +8,7 @@ var userInput = ''                                                            //
 
 document.getElementById('getRN').addEventListener('click', checkValue)
 
-function checkValue () {                                                      // checks if the user input is valid
+function checkValue () {                                                      // check if the user input is valid
   userInput = document.getElementById('decimal-value').value.trim()
 
   if (userInput.length === 0) {                                               // is the user input is empty?
