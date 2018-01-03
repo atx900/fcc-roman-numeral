@@ -8,8 +8,8 @@ var userInput = ''                                                            //
 
 document.getElementById('getRN').addEventListener('click', checkValue)
 
-function checkValue () {                                                      // checks if user input is valid
-  userInput = document.getElementById('decimal-value').value
+function checkValue () {                                                      // checks if the user input is valid
+  userInput = document.getElementById('decimal-value').value.trim()
 
   if (userInput.length === 0) {                                               // is the user input is empty?
     window.alert('Unable to convert an empty value.')
@@ -21,11 +21,11 @@ function checkValue () {                                                      //
 
   userInput = Number(userInput)                                               // converts user input string to number
 
-  if (isNaN(userInput) === true) {                                            // is user input a number or not?
+  if (isNaN(userInput) === true) {                                            // checks if user input is a number or not a number
     window.alert('Please enter a valid number.')
     document.getElementById('decimal-value').value = ''
   } else {
-    convertToRomanNumeral(userInput)
+    convertToRomanNumeral(userInput)                                          // converts the number to its roman numeral symbols
     document.getElementById('decimal-value').value = ''
   }
 }
@@ -59,9 +59,9 @@ function convertToRomanNumeral (num) {                                        //
     tableConverted.push(holderRomanNumeral)
   }
 
-  num = tableConverted.join('')                                               // merge roman numeral symbols into a string
+  num = tableConverted.join('')                                               // merge roman numeral symbols into a single string
 
-  var elementTarget = document.querySelector('.roman-numeral')                // delete previous conversion (if there was one)
+  var elementTarget = document.querySelector('.roman-numeral')                // clear up previous conversion (if there was one)
   elementTarget.parentNode.removeChild(elementTarget)
 
   var parentElement = document.querySelector('.column-center')                // create a new DOM element & display result
